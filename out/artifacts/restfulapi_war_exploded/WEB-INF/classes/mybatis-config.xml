@@ -9,24 +9,24 @@
     <!-- 配置数据源，事务 -->
     <environments default="test">
         <environment id="test">
-            <!-- 事务：JDBC/MANAGED-自己管理�? -->
+            <!-- 事务：JDBC/MANAGED-自己管理去 -->
             <transactionManager type="JDBC"/>
             <!-- 数据源：POOLED/UNPOOLED/JNDI -->
             <dataSource type="POOLED">
                 <property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-                <property name="url" value="jdbc:sqlserver://10.1.5.70:1433;databaseName=Test; catalogName=Test"/>
-                <property name="username" value="zxxktest"/>
+                <property name="url" value="jdbc:sqlserver://localhost:1433;databaseName=Test; catalogName=Test"/>
+                <property name="username" value="sa"/>
                 <property name="password" value="123456"/>
             </dataSource>
         </environment>
         <environment id="deploy">
-            <!-- 事务：JDBC/MANAGED-自己管理�? -->
+            <!-- 事务：JDBC/MANAGED-自己管理去 -->
             <transactionManager type="JDBC"/>
             <!-- 数据源：POOLED/UNPOOLED/JNDI -->
             <dataSource type="POOLED">
                 <property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-                <property name="url" value="jdbc:sqlserver://10.1.5.70:1433;databaseName=Test;"/>
-                <property name="username" value="zxxktest"/>
+                <property name="url" value="jdbc:sqlserver://localhost:1433;databaseName=Test;"/>
+                <property name="username" value="sa"/>
                 <property name="password" value="123456"/>
             </dataSource>
         </environment>

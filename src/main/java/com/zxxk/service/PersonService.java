@@ -10,14 +10,14 @@ import java.util.List;
  */
 public  class PersonService {
 
-    public void GetAll(){
+    public List<Person> GetAll(){
         // 获取SqlSession对象
         SqlSession session = MyBatisUtil.getSqlSession();
         // 查询全部对象
-        List<Person> list = session.selectList("com.zxxk.mapper.PersonMapper.findall");
+        List<Person> list = session.selectList("com.zxxk.domain.PersonMapper.find");
         System.out.println(list.size());
         //关闭SqlSession对象
         MyBatisUtil.closeSqlSession(session);
-
+return list;
     }
 }
