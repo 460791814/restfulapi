@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+
+    <!-- 配置数据源，事务 -->
+    <environments default="test">
+        <environment id="test">
+            <!-- 事务：JDBC/MANAGED-自己管理�? -->
+            <transactionManager type="JDBC"/>
+            <!-- 数据源：POOLED/UNPOOLED/JNDI -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+                <property name="url" value="jdbc:sqlserver://10.1.5.70:1433;databaseName=Test; catalogName=Test"/>
+                <property name="username" value="zxxktest"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+        <environment id="deploy">
+            <!-- 事务：JDBC/MANAGED-自己管理�? -->
+            <transactionManager type="JDBC"/>
+            <!-- 数据源：POOLED/UNPOOLED/JNDI -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+                <property name="url" value="jdbc:sqlserver://10.1.5.70:1433;databaseName=Test;"/>
+                <property name="username" value="zxxktest"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!-- 映射文件mapper -->
+    <mappers>
+        <mapper resource="com/zxxk/mapper/PersonMapper.xml"/>
+
+    </mappers>
+</configuration>
